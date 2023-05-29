@@ -1,39 +1,44 @@
 import { useEffect, useState } from "react";
 import axios from 'axios'
+import RecCards from "../components/RecCards";
 // import styled from 'styled-components'
 // import {Link} from 'react-router-dom'
 
 const Glassar = () => {
-const [glassar, setGlassar] = useState([])
-useEffect(()=>{
-    const fetchGlassar = async() =>{
-        try {
-            const res = await axios.get("http://localhost:8800/glassar")
-        setGlassar(res.data)
+
+    const [glassar, setGlassar] = useState([])
+    const [recensioner, setRecensioner] = useState([])
+
+    useEffect(()=>{
+        const fetchGlassar = async() =>{
+            try {
+                const res = await axios.get("http://localhost:8800/glassar")
+            setGlassar(res.data)
+            }
+            catch (err){
+                console.log(err);
+            }
         }
-        catch (err){
-            console.log(err);
+    fetchGlassar()
+    },[])
+
+    useEffect(()=>{
+        const fetchRecensioner = async() =>{
+            try {
+                const res = await axios.get("http://localhost:8800/recensioner")
+            setRecensioner(res.data)
+            }
+            catch (err){
+                console.log(err);
+            }
         }
-    }
-fetchGlassar()
-},[])
+    fetchRecensioner()
+    },[])
 
 return(
 
     <div>
-
-        <h1>Glassar</h1>
-        <div className="glassar">
-        {glassar.map((glass)=>(
-        <div key={glass.id} className="glass">
-            <h3>{glass.namn}</h3>
-            <p>Smakar {glass.smak}</p>
-            <p>Laktos: {glass.laktos}</p>
-            <p>Nötter: {glass.notter}</p>
-        </div>
-        ))}
-
-    </div>
+        <RecCards recensioner={recensioner} />
     </div>
 )
 }
