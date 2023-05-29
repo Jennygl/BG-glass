@@ -18,6 +18,7 @@ export default Footer
 
 const Foot = styled.footer`
 position: relative;
+bottom: 0;
 height: 16rem;
 background: #FAC1DA;
 display: flex;

@@ -35,27 +35,31 @@ const Circle = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
-  height: 200px;
-  width: 200px;
+align-items: center;
+  height: 25vw;
+  width: 25vw;
   border: 3px solid #FAC1D9;
   background-color: #fbfbfbb7;
   border-radius: 50%;
-  position: absolute;
-  left: 13px;
+  position: relative;
+  left: 60vw;
   padding: 1em;
+  margin-top: 5vh;
 `
 const RecText = styled.div`
 line-height: 0;
-padding: 1em;
+/* padding: 3em; */
+justify-content: center;
+align-items: center;
 `
 const GoTo = styled.p`
-font-size: 1em;
+font-size: 1.5em;
 text-align: start;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 color: black;
 `
 const Rec = styled.span`
-font-size: 2em;
+font-size: 3em;
 color: black;
 text-align: start;
 line-height: 1em;
@@ -63,13 +67,13 @@ padding-bottom: 1em;
 `
 
 const Popsicle1 = styled.img`
-width: 2vw;
+width: 3vw;
 align-self: center;
 transform: rotate(340deg);
 padding-right: 1em;
 `
 const Popsicle2 = styled.img`
-width: 2vw;
+width: 3vw;
 align-self: center;
 transform: rotate(20deg);
 `

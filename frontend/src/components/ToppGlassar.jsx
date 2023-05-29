@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import styled from 'styled-components'
 import magnumImage from '../assets/magnum.png'
 import strutenImage from '../assets/struten.png'
@@ -37,10 +37,10 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   height: 200vh;
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
-  background-color: #78CDC0;
+  /* background-color: #78CDC0; */
 `
 
 const FirstPair = styled.div`
