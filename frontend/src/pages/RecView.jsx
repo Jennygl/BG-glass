@@ -3,7 +3,6 @@ import axios from 'axios'
 // import styled from 'styled-components'
 // import {Link} from 'react-router-dom'
 
-
 const Glassar = () => {
 const [glassar, setGlassar] = useState([])
 useEffect(()=>{
@@ -20,7 +19,9 @@ fetchGlassar()
 },[])
 
 return(
+
     <div>
+
         <h1>Glassar</h1>
         <div className="glassar">
         {glassar.map((glass)=>(
