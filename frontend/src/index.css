@@ -13,6 +13,42 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 }
+
+.arrow {
+    /* -webkit-appearance: none; */
+    /* -moz-appearance: none; */
+    appearance: none;
+    width: 100%;
+    padding: 5px;
+    font-size: 1.5vw;
+}
+/* "Sök glass" */
+::placeholder {
+    color: black;
+    font-size: 1.5vw;
+}
+@media (max-width: 1000px) {
+    ::placeholder {
+        color: black;
+        font-size: 1em;
+    }
+}
+
+.input::after {
+    content: '<ion-icon name="search-outline"></ion-icon>';
+}
+.select::after {
+    content: '\25BD';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 35px;
+    color: #78cdc0;
+    padding-right: 15px;
+    pointer-events: none;
+}
+
 .logos {
     color: black;
 }
@@ -35,9 +71,9 @@ body {
     /* place-items: center; */
     /* min-width: 320px; */
     background-color: #78cdc0;
-  /* display: flex; */
-  min-width: 320px;
-  min-height: 100vh;
+    /* display: flex; */
+    min-width: 320px;
+    min-height: 100vh;
 }
 
 /* h1 {
