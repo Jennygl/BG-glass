@@ -15,7 +15,7 @@ function PostGlass() {
 
     const fetchGlassarna = async () => {
         try {
-            const response = await axios.get('http://localhost:8800/glassar')
+            const response = await axios.get('http://localhost:8800/glassarna')
             setGlassarna(response.data)
         } catch (error) {
             console.error('error fetching glassar:', error)
