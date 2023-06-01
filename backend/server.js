@@ -43,6 +43,16 @@ db.connect(function (err) {
 })
 
 //Routes
+
+app.get('/glassarna', async (req, res) => {
+    try {
+        const glassar = await db.query('SELECT * FROM glassar')
+        res.json(glassar.rows)
+    } catch (err) {
+        console.log(err.message)
+    }
+})
+
 app.get('/', async (req, res) => {
     try {
         // const glassarna = await db.query(`SELECT * FROM  glassar;`)
