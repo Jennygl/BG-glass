@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
+import RecCards from './RecCards';
 const initialState = ("");
 function FilterComp({glassarna, recensioner}) {
     const [selectedNamn, setSelectedNamn] = useState(initialState);
@@ -140,18 +141,8 @@ function FilterComp({glassarna, recensioner}) {
 
 
 </Form>
-          <div className="glassar">
-              {filtreradeGlassar.map((glass)=>(
-              <div key={glass.id} className="glass">
-              <h3>{glass.namn}</h3>
-              <p>{glass.smak}</p>
-              <p>{glass.recensent}</p>
-              <p>{glass.rec}</p>
-              {/* <p>{glass.laktos}</p> */}
-
-              </div>
-              ))}
-              </div>
+<RecCards recensioner={filtreradeGlassar}></RecCards>
+         
     </>
   );
 }
