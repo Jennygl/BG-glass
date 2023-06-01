@@ -82,7 +82,7 @@ app.get('/glassar', async (req, res) => {
         INNER JOIN
         recensioner
         ON recensioner.glass_id = glassar.id
-        ORDER BY glassar.namn;`)
+        ORDER BY namn;`)
         res.json(glassarna.rows)
     } catch (err) {
         console.log(err.message)
@@ -98,10 +98,10 @@ app.get('/recensioner', async (req, res) => {
 })
 
 app.post('/recensioner', async (req, res) => {
-    const { glass_id, namn, betyg, rec } = req.body
-    const values = [glass_id, namn, betyg, rec]
+    const { glass_id, recensent, betyg, rec } = req.body
+    const values = [glass_id, recensent, betyg, rec]
     await db.query(
-        'INSERT INTO recensioner(glass_id, namn, betyg, rec) VALUES ($1, $2, $3, $4)',
+        'INSERT INTO recensioner(glass_id, recensent, betyg, rec) VALUES ($1, $2, $3, $4)',
         values
     )
     res.json('Recension skapad')
