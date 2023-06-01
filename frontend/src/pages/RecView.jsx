@@ -43,7 +43,7 @@ return(
         <HeroImg hero={hero}/>
         <PostGlass />
         <FilterComp glassarna={glassarna} recensioner={recensioner} />
-        <RecCards recensioner={glassarna} />
+        {/* <RecCards recensioner={glassarna} /> */}
     </div>
 )
 }
