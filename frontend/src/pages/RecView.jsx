@@ -3,13 +3,13 @@ import axios from 'axios'
 import RecCards from "../components/RecCards";
 import hero from '../assets/hero2.png'
 import HeroImg from '../components/HeroImage'
-// import styled from 'styled-components'
-// import {Link} from 'react-router-dom'
+import PostGlass from "../components/PostGlass";
+import FilterComp from "../components/FilterComp";
 
 const Glassar = () => {
 
-    const [glassar, setGlassar] = useState([])
-    //const [recensioner, setRecensioner] = useState([])
+    const [glassarna, setGlassar] = useState([])
+    const [recensioner, setRecensioner] = useState([])
 
     useEffect(()=>{
         const fetchGlassar = async() =>{
@@ -23,7 +23,7 @@ const Glassar = () => {
         }
     fetchGlassar()
     },[])
-/*
+
     useEffect(()=>{
         const fetchRecensioner = async() =>{
             try {
@@ -36,12 +36,14 @@ const Glassar = () => {
         }
     fetchRecensioner()
     },[])
-*/
+
 return(
 
     <div>
         <HeroImg hero={hero}/>
-        <RecCards recensioner={glassar} />
+        <PostGlass />
+        <FilterComp glassarna={glassarna} recensioner={recensioner} />
+        <RecCards recensioner={glassarna} />
     </div>
 )
 }
