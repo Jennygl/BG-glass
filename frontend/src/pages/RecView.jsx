@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from 'axios'
-import RecCards from "../components/RecCards";
 import hero from '../assets/hero2.png'
 import HeroImg from '../components/HeroImage'
 import PostGlass from "../components/PostGlass";
@@ -43,7 +42,6 @@ return(
         <HeroImg hero={hero}/>
         <PostGlass />
         <FilterComp glassarna={glassarna} recensioner={recensioner} />
-        {/* <RecCards recensioner={glassarna} /> */}
     </div>
 )
 }

@@ -24,7 +24,7 @@ const RecCards = ({recensioner}) => {
     <>
         <div>
             {recensioner.map((recension, index)=>(
-            <RecensionWrapper key={recension.id}>
+            <RecensionWrapper key={index}>
             <GlassBild> {
                 recension.namn === "Daim" ? <Bild src={Daim} alt="Daim"/> :
                 recension.namn === "Magnum Classic" ? <Bild src={Magnum} alt="Magnum"/> :
