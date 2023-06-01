@@ -48,7 +48,19 @@ app.get('/', (req, res) => {
 })
 app.get('/glassar', async (req, res) => {
     try {
-        const glassar = await db.query('SELECT * FROM glassar')
+        //const glassar = await db.query('SELECT * FROM glassar')
+        const glassar = await db.query(`SELECT glassar.id,
+        namn,
+        smak,
+        laktos,
+        notter,
+        recensent,
+        glass_id,
+        betyg,
+        rec
+        FROM glassar INNER JOIN recensioner
+        ON recensioner.glass_id = glassar.id
+        ORDER BY glassar.namn;`)
         res.json(glassar.rows)
     } catch (err) {
         console.log(err.message)

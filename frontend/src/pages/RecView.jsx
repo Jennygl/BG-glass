@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from 'axios'
 import RecCards from "../components/RecCards";
+import hero from '../assets/hero2.png'
+import HeroImg from '../components/HeroImage'
 // import styled from 'styled-components'
 // import {Link} from 'react-router-dom'
 
 const Glassar = () => {
 
     const [glassar, setGlassar] = useState([])
-    const [recensioner, setRecensioner] = useState([])
+    //const [recensioner, setRecensioner] = useState([])
 
     useEffect(()=>{
         const fetchGlassar = async() =>{
@@ -21,7 +23,7 @@ const Glassar = () => {
         }
     fetchGlassar()
     },[])
-
+/*
     useEffect(()=>{
         const fetchRecensioner = async() =>{
             try {
@@ -34,11 +36,12 @@ const Glassar = () => {
         }
     fetchRecensioner()
     },[])
-
+*/
 return(
 
     <div>
-        <RecCards recensioner={recensioner} />
+        <HeroImg hero={hero}/>
+        <RecCards recensioner={glassar} />
     </div>
 )
 }
