@@ -43,13 +43,47 @@ db.connect(function (err) {
 })
 
 //Routes
-app.get('/', (req, res) => {
-    res.json('testing')
+app.get('/', async (req, res) => {
+    try {
+        // const glassarna = await db.query(`SELECT * FROM  glassar;`)
+        const glassarna = await db.query(`SELECT glassar.id,
+        namn,
+        smak,
+        laktos,
+        notter,
+        recensent,
+        glass_id,
+        betyg,
+        rec
+        FROM
+        glassar
+        INNER JOIN
+        recensioner
+        ON recensioner.glass_id = glassar.id
+         ORDER BY betyg DESC;`)
+        res.json(glassarna.rows)
+    } catch (err) {
+        console.log(err.message)
+    }
 })
 app.get('/glassar', async (req, res) => {
     try {
-        const glassar = await db.query('SELECT * FROM glassar')
-        res.json(glassar.rows)
+        const glassarna = await db.query(`SELECT glassar.id,
+        namn,
+        smak,
+        laktos,
+        notter,
+        recensent,
+        glass_id,
+        betyg,
+        rec
+        FROM
+        glassar
+        INNER JOIN
+        recensioner
+        ON recensioner.glass_id = glassar.id
+        ORDER BY glassar.namn;`)
+        res.json(glassarna.rows)
     } catch (err) {
         console.log(err.message)
     }
