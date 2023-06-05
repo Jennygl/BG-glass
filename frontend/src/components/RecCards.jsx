@@ -93,7 +93,7 @@ const AccordionButton = styled.div`
 
 const GlassNamn = styled.h3`
     grid-column: 1/2;
-    font-family: neucha;
+    font-family: 'Neucha';
     font-size: 2rem;
     margin: 0;
     width: 15rem;
@@ -101,7 +101,7 @@ const GlassNamn = styled.h3`
 
 const Betyg = styled.p`
     grid-column: 3/4;
-    font-family: neucha;
+    font-family: 'Neucha';
     margin: 0;
 `;
 
@@ -110,7 +110,7 @@ const StyledImg = styled.img`
 `;
 
 const Recension = styled.p`
-    font-family: Indie Flower;
+    font-family: 'Indie Flower';
     color: #FFF8B2;
     font-size: 1.5rem;
 `;
@@ -130,5 +130,6 @@ const RecensionWrapper = styled.div`
 
 const StyledP = styled.p`
     font-family: neucha;
+    color: #FFFFFF;
     margin: 0;
 `;
