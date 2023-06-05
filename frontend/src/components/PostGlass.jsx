@@ -212,7 +212,7 @@ font-size: 1.5rem;
 const GlassSelect = styled.select`
     background-color: white;
     border: solid white;
-    color: #78CDC0;
+    color: #31898a;
     font-family: 'Neucha';
     font-size: 1.4rem;
     border-radius: 5px;
@@ -282,7 +282,7 @@ const BetygOption = styled.label`
 const RecensentLabel = styled.label`
 font-family: 'Neucha';
 color: white;
-font-size: 1.5rem;
+font-size: 1.7rem;
 margin-top: 5vh;
 margin-bottom: 1vh;
 
@@ -291,7 +291,7 @@ margin-bottom: 1vh;
 const RecensentInput = styled.input`
     background-color: white;
     border: solid white;
-    color: #78CDC0;
+    color: #31898a;
     font-family: 'Neucha';
     font-size: 1.4rem;
     border-radius: 3px;
@@ -317,6 +317,9 @@ height: 30vh;
 background-color: white;
 border-radius: 3%;
 border: solid white;
+font-family: 'Neucha';
+font-size: 1.4rem;
+color: #31898a;
 
 @media (max-width: 500px) {
     width: 100%;
