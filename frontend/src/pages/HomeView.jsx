@@ -5,6 +5,7 @@ import hero from '../assets/hero.png'
 import HeroImg from '../components/HeroImage'
 import ToppGlassar from '../components/ToppGlassar'
 import styled from 'styled-components'
+import creamcursor from '../assets/smallcreamcursor.png'
 import {Link} from 'react-router-dom'
 
 function HomeView() {
@@ -92,7 +93,7 @@ const StyledButton = styled.button`
   border: 0;
   border-radius: .5rem;
   margin: 1rem 0 5rem 0;
-  cursor: pointer;
+  cursor: url(${creamcursor}), auto;
   &:hover {
     background-color: #F9B6D2;
   }

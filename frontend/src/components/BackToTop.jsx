@@ -2,6 +2,7 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import BackImg from '../assets/BackUp.png'
 import PinkBackImg from '../assets/BackUpPink.png'
+import creamcursor from '../assets/smallcreamcursor.png'
 
 function BackToTop() {
     const scrollToTop = () =>{
@@ -49,6 +50,7 @@ font-size:1em;
 color: #FFF8B2;
 width: 20vw;
 margin: 0 auto 0 auto;
+cursor: url(${creamcursor}), auto;
 &:hover {
     color: #FAC1D9;
     }

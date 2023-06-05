@@ -11,6 +11,7 @@ import Daim from '../assets/glass/daim.png'
 import Magnum from '../assets/glass/magnum_classic.png'
 import Piggelin from '../assets/glass/piggelin.png'
 import Solero from '../assets/glass/solero.png'
+import creamcursor from '../assets/smallcreamcursor.png'
 
 const RecCards = ({recensioner}) => {
 
@@ -87,7 +88,7 @@ const AccordionButton = styled.div`
     font-size: 3rem;
     width: 3rem;
     height: 3rem;
-    cursor: pointer;
+    cursor: url(${creamcursor}), auto;
     margin-bottom: .7rem;
 `;
 

@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import popsicle1 from '../assets/popsicle1.png'
 import popsicle2 from '../assets/popsicle2.png'
 import arrow1 from '../assets/arrow.png'
+import creamcursor from '../assets/smallcreamcursor.png'
 import {Link} from 'react-router-dom'
 
 function ReviewButton() {
@@ -72,6 +73,7 @@ align-items: center;
   padding: 1em;
   margin-top: 5vh;
   margin-right: 5vw;
+  cursor: url(${creamcursor}), auto;
   @media (max-width: 550px) {
     width: 40vw;
     height: 40vw;

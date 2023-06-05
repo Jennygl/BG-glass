@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
 import RecCards from './RecCards';
+import creamcursor from '../assets/smallcreamcursor.png'
 
 //Sätter startvärdet till en tom sträng för att kunna ta bort alla filter.
 const initialState = ("");
@@ -206,7 +207,7 @@ border-radius: 5px;
   &::after {
     content: '\\25BD';
     position: absolute;
-    top: 10px;
+    /* top: 10px; */
     right: 0;
     bottom: 0;
     font-size: 35px;
@@ -302,13 +303,14 @@ padding-top: 1vh;
   }
 `
 const Reset = styled.button`
-background-color: #EA97A9;
+background-color: #31898a;
 border: 2px solid white;
 border-radius: 5px;
 height: 5vh;
 font-size: 1.5vw;
 font-family: 'Neucha';
 margin: 2vw;
+cursor: url(${creamcursor}), auto;
 @media (max-width: 1000px) {
 font-size: 1.5em;
   }
