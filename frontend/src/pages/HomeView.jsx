@@ -43,7 +43,7 @@ const StyledDiv = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 500px) {
     width: 100vw;
     height: 132vh;
     justify-content: end;
@@ -60,7 +60,7 @@ const StyledH1 = styled.h1`
   color: #222222;
   font-size: 4rem;
   margin-bottom: 0;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 500px) {
     font-size: 3rem;
     background-color: #FFFFFF;
     padding: .3rem 2rem .3rem 1rem;
@@ -72,7 +72,7 @@ const StyledP = styled.p`
   font-family: 'Neucha';
   color: #222222;
   font-size: 1rem;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 500px) {
     width: 85vw;
     text-align: center;
     background-color: #fef8b4;
@@ -96,7 +96,7 @@ const StyledButton = styled.button`
   &:hover {
     background-color: #F9B6D2;
   }
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 500px) {
     margin: 0 5rem;
   }
 `;
