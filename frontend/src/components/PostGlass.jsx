@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+import nollbetyg from '../assets/betyg/nollbetyg.png'
+import ettbetyg from '../assets/betyg/ettbetyg.png'
+import creamcursor from '../assets/smallcreamcursor.png'
+
 
 function PostGlass() {
     const [glassId, setGlassId] = useState('');
@@ -45,10 +49,14 @@ function PostGlass() {
     }
     }
 
+    const BetygImages = [
+        nollbetyg,
+        ettbetyg
+      ];
 
   return (
     <Container>
-        <h2>Skriv en recension</h2>
+        <RecTitle>Skriv en recension</RecTitle>
         <FormWrapper>
         <form onSubmit={handleSubmit}>
         <Row>
@@ -80,7 +88,7 @@ function PostGlass() {
                 selected={betyg === value}
                 onClick={() => setBetyg(value)}
               >
-                {value}
+                <img src={value <= betyg ? ettbetyg : nollbetyg} alt={`Betyg ${value}`} />
               </BetygOption>
             ))}
             </BetygInputWrapper>
@@ -96,7 +104,7 @@ function PostGlass() {
 
             <Row>
             <BottomLeftGroup>
-            <RecensentLabel htmlFor="recensent">Namn:</RecensentLabel>
+            <RecensentLabel htmlFor="recensent">Ange namn (valfritt)</RecensentLabel>
             <RecensentInput type="text"
             id="recensent"
             value={recensent}
@@ -117,6 +125,13 @@ function PostGlass() {
 
 export default PostGlass
 
+const RecTitle = styled.h2`
+font-family: 'Neucha';
+font-size: 2.5rem;
+color: white;
+letter-spacing: 0.1em;
+`
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -126,10 +141,19 @@ const Container = styled.div`
 const FormWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 80%;
-  border: solid 4px;
-  border-radius: 3%;
+  width: 70%;
+  height: 70vh;
+  border: solid white 4px;
+  border-radius: 1% / 1%;
   padding: 2vw;
+
+  @media (max-width: 390px) {
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    border-radius: 2% / 2%;
+    padding: 1rem;
+  }
 `
 
 const Row = styled.div`
@@ -137,6 +161,11 @@ const Row = styled.div`
   justify-content: space-between;
   margin-bottom: 1rem;
   width: 80%;
+
+  @media (max-width: 390px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `
 
 const TopLeftGroup = styled.div`
@@ -168,43 +197,84 @@ const BottomRightGroup = styled.div`
 
 const GlassLabel = styled.label`
 padding-right: 1vw;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-family: 'Neucha';
+color: white;
+font-size: 1.5rem;
 `
 
 const GlassSelect = styled.select`
     background-color: white;
-    border: solid;
-    color: #1b72bf;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border-radius: 5%;
-    height: 2rem;
+    border: solid white;
+    color: #78CDC0;
+    font-family: 'Neucha';
+    font-size: 1.2rem;
+    border-radius: 5% / 10%;
+    height: 5vh;
     width: 25vw;
+
+    @media (max-width: 390px) {
+    width: 100%;
+
+    option {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+  }
+
 `
 
 const BetygLabel = styled.label`
 color: white;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-family: 'Neucha';
+font-size: 1.5rem;
 text-align: center;
 margin-bottom: 1vh;
+
+@media (max-width: 390px) {
+    margin-top: 5vh;
+  }
 `
 
 const BetygInputWrapper = styled.div`
 display: flex;
+
 `
 
 const BetygOption = styled.label`
-    background-color: lightgreen;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
-  margin-right: 5px;
+  width: 5vw;
+  height: 8vh;
   cursor: pointer;
+
+  &:hover {
+    img {
+      filter: brightness(0.7);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 390px) {
+    width: 100%;
+  }
+
 `
 
 const RecensentLabel = styled.label`
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-family: 'Neucha';
+color: white;
+font-size: 1.5rem;
+margin-top: 5vh;
+margin-bottom: 1vh;
 
 `
 
@@ -212,34 +282,52 @@ const RecensentInput = styled.input`
     background-color: white;
     border: solid;
     color: #1b72bf;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Neucha';
     border-radius: 5%;
     height: 1.8rem;
     width: 25vw;
+
+    @media (max-width: 390px) {
+    width: 100%;
+  }
 `
 
 const RecLabel = styled.label`
 text-align: center;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-family: 'Neucha';
+font-size: 2rem;
+color: white;
 
 `
 
 const RecTextarea = styled.textarea`
-width: 50vw;
-height: 20vh;
+width: 60vw;
+height: 30vh;
 background-color: white;
 border-radius: 3%;
-border: solid;
+border: solid white;
+
+@media (max-width: 390px) {
+    width: 100%;
+  }
 `
 
 const SubmitButton = styled.button`
-background-color: white;
-color: #26b7ad;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-height: 4.4vh;
+background-color: #31898a;
+color: #ffffff;
+font-family: 'Neucha';
+font-size: 1.2rem;
+height: 8vh;
 width: 12vw;
-border: solid;
+border: solid #ffffff;
 border-radius: 7%;
-margin-top: 2.9vh;
+margin-top: 5vh;
 margin-left: 8vw;
+margin-bottom: 3vh;
+cursor: url(${creamcursor}), auto;
+
+@media (max-width: 390px) {
+    width: 100%;
+    margin-left: 0;
+  }
 `
