@@ -49,6 +49,10 @@ function PostGlass() {
     }
     }
 
+    const refresh = () => {
+        window.location.reload()
+    }
+
     const BetygImages = [
         nollbetyg,
         ettbetyg
@@ -114,7 +118,7 @@ function PostGlass() {
             </BottomLeftGroup>
 
             <BottomRightGroup>
-            <SubmitButton type="submit">Skicka</SubmitButton>
+            <SubmitButton type="submit" onClick={refresh}>Skicka</SubmitButton>
             </BottomRightGroup>
             </Row>
         </form>
@@ -127,9 +131,11 @@ export default PostGlass
 
 const RecTitle = styled.h2`
 font-family: 'Neucha';
-font-size: 2.5rem;
+font-size: 3.5rem;
 color: white;
 letter-spacing: 0.1em;
+text-align: center;
+
 `
 
 const Container = styled.div`
@@ -143,9 +149,10 @@ const FormWrapper = styled.div`
   justify-content: center;
   width: 70%;
   height: 70vh;
-  border: solid white 4px;
+  border: solid white 3px;
   border-radius: 1% / 1%;
   padding: 2vw;
+  background-color: #78cdc0;
 
   @media (max-width: 500px) {
     flex-direction: column;
@@ -207,8 +214,8 @@ const GlassSelect = styled.select`
     border: solid white;
     color: #78CDC0;
     font-family: 'Neucha';
-    font-size: 1.2rem;
-    border-radius: 5% / 10%;
+    font-size: 1.4rem;
+    border-radius: 5px;
     height: 5vh;
     width: 25vw;
 
@@ -228,7 +235,7 @@ const GlassSelect = styled.select`
 const BetygLabel = styled.label`
 color: white;
 font-family: 'Neucha';
-font-size: 1.5rem;
+font-size: 1.8rem;
 text-align: center;
 margin-bottom: 1vh;
 
@@ -239,6 +246,9 @@ margin-bottom: 1vh;
 
 const BetygInputWrapper = styled.div`
 display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
 
 `
 
@@ -257,8 +267,8 @@ const BetygOption = styled.label`
   }
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
     object-fit: contain;
     border-radius: 50%;
   }
@@ -280,11 +290,12 @@ margin-bottom: 1vh;
 
 const RecensentInput = styled.input`
     background-color: white;
-    border: solid;
-    color: #1b72bf;
+    border: solid white;
+    color: #78CDC0;
     font-family: 'Neucha';
-    border-radius: 5%;
-    height: 1.8rem;
+    font-size: 1.4rem;
+    border-radius: 3px;
+    height: 5vh;
     width: 25vw;
 
     @media (max-width: 500px) {
@@ -316,15 +327,19 @@ const SubmitButton = styled.button`
 background-color: #31898a;
 color: #ffffff;
 font-family: 'Neucha';
-font-size: 1.2rem;
-height: 8vh;
-width: 12vw;
+font-size: 1.8rem;
+height: 10vh;
+width: 15vw;
 border: solid #ffffff;
 border-radius: 7%;
 margin-top: 5vh;
-margin-left: 8vw;
+margin-left: 17vw;
 margin-bottom: 3vh;
 cursor: url(${creamcursor}), auto;
+
+&:hover {
+    background-color: #194748;
+}
 
 @media (max-width: 500px) {
     width: 100%;
