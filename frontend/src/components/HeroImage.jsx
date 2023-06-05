@@ -19,14 +19,14 @@ const StyledDiv = styled.div`
 
 const StyledImg = styled.img`
     width: 100vw;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 500px) {
     width: auto;
     height: 95vh;
   }
 `;
 
 const Box = styled.div`
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 500px) {
     width: 100vw;
     height: 135vh;
   }

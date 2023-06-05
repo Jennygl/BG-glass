@@ -68,7 +68,7 @@ const StyledDiv = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 500px) {
     width: 90vw;
     height: 90vh;
     left: 0;
@@ -81,7 +81,7 @@ const StyledH1 = styled.h1`
   color: #222222;
   font-size: 4rem;
   margin-bottom: 0;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 500px) {
     font-size: 3rem;
     margin-top: 0rem;
     background-color: #FFFFFF;
@@ -94,7 +94,7 @@ const StyledP = styled.p`
   font-family: 'Neucha';
   color: #222222;
   font-size: 1rem;
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 500px) {
     background-color: #fef8b4;
     padding: 2rem 2rem;
     position: absolute;
