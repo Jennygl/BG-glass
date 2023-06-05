@@ -11,6 +11,9 @@ import Daim from '../assets/glass/daim.png'
 import Magnum from '../assets/glass/magnum_classic.png'
 import Piggelin from '../assets/glass/piggelin.png'
 import Solero from '../assets/glass/solero.png'
+import Tiptop from '../assets/glass/tiptop.png'
+import Twister from '../assets/glass/twister.png'
+import Calippo from '../assets/glass/calippo.png'
 import creamcursor from '../assets/smallcreamcursor.png'
 
 const RecCards = ({recensioner}) => {
@@ -31,6 +34,9 @@ const RecCards = ({recensioner}) => {
                 recension.namn === "Magnum Classic" ? <Bild src={Magnum} alt="Magnum"/> :
                 recension.namn === "Piggelin" ? <Bild src={Piggelin} alt="Piggelin"/> :
                 recension.namn === "Solero" ? <Bild src={Solero} alt="Solero"/> :
+                recension.namn === "Tiptop" ? <Bild src={Tiptop} alt="Tiptop"/> :
+                recension.namn === "Twister" ? <Bild src={Twister} alt="Twister"/> :
+                recension.namn === "Calippo Cola" ? <Bild src={Calippo} alt="Calippo"/> :
                 'Bild saknas'}
             </GlassBild>
             <RecensionerDiv>
@@ -86,6 +92,7 @@ const GlassBetygDiv = styled.div`
 const AccordionButton = styled.div`
     grid-column: 6;
     font-size: 3rem;
+    color: #FFFFFF;
     width: 3rem;
     height: 3rem;
     cursor: url(${creamcursor}), auto;
@@ -95,6 +102,7 @@ const AccordionButton = styled.div`
 const GlassNamn = styled.h3`
     grid-column: 1/2;
     font-family: 'Neucha';
+    color: #FFFFFF;
     font-size: 2rem;
     margin: 0;
     width: 15rem;
