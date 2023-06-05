@@ -46,7 +46,7 @@ const rating = (betyg) => {
     for(let i = betyg; i< maxBetyg;i++){
         bilder.push(unratedPng)
     }
- 
+
     return bilder.map((bild, index) => <div className='ratedicon' key={index}>{bild}</div>);
 
   }
@@ -70,7 +70,7 @@ switch (glassNamn) {
 
 
     <Wrapper>
-<HEADING> <ion-icon name="arrow-down-outline"></ion-icon>TOPPGLASSAR<ion-icon name="sunny-outline"></ion-icon></HEADING>
+<HEADING> TOPPGLASSAR</HEADING>
     <FirstPair>
   {glassar.length > 0 && (
     <>
@@ -116,7 +116,7 @@ export default ToppGlassar
 const IMG = styled.img`
 height: 3rem;
 
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 500px) {
    height: 1.5rem;
 }
 `
@@ -131,7 +131,7 @@ const Wrapper = styled.div`
   top: 0;
   left: 0;
 
-  @media screen and (max-width: 391px) {
+  @media screen and (max-width: 500px) {
     height:100vh;
 
 }
@@ -142,7 +142,7 @@ display: flex;
 align-items: center;
 margin-top: 10vh;
 margin-right: 60%;
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 500px) {
   margin: 1em auto;
 }
 `
@@ -159,7 +159,7 @@ width: 15vw;
 height: 15vw;
 border: solid #FFF8B2;
 color: #FFF8B2;
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 500px) {
 padding:17vw;
 align-content: center;
 
@@ -171,7 +171,7 @@ display: flex;
 align-items: center;
 justify-content: flex-end;
 margin-left: 50%;
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 500px) {
    flex-direction: row-reverse;
     margin:1em auto;
 }
@@ -189,7 +189,7 @@ width: 15vw;
 height: 15vw;
 border: solid #FFF8B2;
 color: #FFF8B2;
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 500px) {
     padding:17vw;
 align-content: center;
 }
@@ -211,7 +211,7 @@ width: 15vw;
 height: 15vw;
 border: solid #FFF8B2;
 color: #FFF8B2;
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 500px) {
     padding:17vw;
     align-content: center;
 }
@@ -220,7 +220,7 @@ color: #FFF8B2;
 const FirstImage = styled.img`
   max-width: 20vw;
   height: auto;
-  @media screen and (max-width: 391px) {
+  @media screen and (max-width: 500px) {
 
 max-width:45vw;
 
@@ -230,7 +230,7 @@ max-width:45vw;
 const SecondImage = styled.img`
   max-width: 20vw;
   height: auto;
-  @media screen and (max-width: 391px) {
+  @media screen and (max-width: 500px) {
 max-width:45vw;
 
 }
@@ -239,7 +239,7 @@ max-width:45vw;
 const ThirdImage = styled.img`
   max-width: 20vw;
   height: auto;
-  @media screen and (max-width: 391px) {
+  @media screen and (max-width: 500px) {
     max-width:45vw;
 
 
@@ -255,7 +255,7 @@ color: #FFFFFF;
 border: 1px solid;
 font-family: 'Inconsolata';
 
-  @media screen and (max-width: 395px) {
+  @media screen and (max-width: 500px) {
    width:80%;
    font-size: 1.5rem;
    text-align: center;
@@ -277,7 +277,7 @@ font-size: 2rem;
 line-height: 4rem;
 letter-spacing: 0.015em;
 color: #FFF8B2;
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 500px) {
    font-size: 1rem;
    line-height: 1.5;
 
@@ -287,7 +287,7 @@ color: #FFF8B2;
 const Quote = styled(P)`
 font-family: 'Indie Flower';
 font-size: 2.2rem;
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 500px) {
    font-size: 1rem;
    line-height: 10px;
 
@@ -300,7 +300,7 @@ font-family: 'Inconsolata';
 font-style: normal;
 font-weight: 400;
 font-size: 1.8rem;
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 500px) {
    font-size: 1rem;
    line-height: 10px;
 
