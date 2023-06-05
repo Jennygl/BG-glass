@@ -147,7 +147,7 @@ const FormWrapper = styled.div`
   border-radius: 1% / 1%;
   padding: 2vw;
 
-  @media (max-width: 390px) {
+  @media (max-width: 500px) {
     flex-direction: column;
     width: 80%;
     height: auto;
@@ -162,7 +162,7 @@ const Row = styled.div`
   margin-bottom: 1rem;
   width: 80%;
 
-  @media (max-width: 390px) {
+  @media (max-width: 500px) {
     flex-direction: column;
     width: 100%;
   }
@@ -212,7 +212,7 @@ const GlassSelect = styled.select`
     height: 5vh;
     width: 25vw;
 
-    @media (max-width: 390px) {
+    @media (max-width: 500px) {
     width: 100%;
 
     option {
@@ -232,7 +232,7 @@ font-size: 1.5rem;
 text-align: center;
 margin-bottom: 1vh;
 
-@media (max-width: 390px) {
+@media (max-width: 500px) {
     margin-top: 5vh;
   }
 `
@@ -263,7 +263,7 @@ const BetygOption = styled.label`
     border-radius: 50%;
   }
 
-  @media (max-width: 390px) {
+  @media (max-width: 500px) {
     width: 100%;
   }
 
@@ -287,7 +287,7 @@ const RecensentInput = styled.input`
     height: 1.8rem;
     width: 25vw;
 
-    @media (max-width: 390px) {
+    @media (max-width: 500px) {
     width: 100%;
   }
 `
@@ -307,7 +307,7 @@ background-color: white;
 border-radius: 3%;
 border: solid white;
 
-@media (max-width: 390px) {
+@media (max-width: 500px) {
     width: 100%;
   }
 `
@@ -326,7 +326,7 @@ margin-left: 8vw;
 margin-bottom: 3vh;
 cursor: url(${creamcursor}), auto;
 
-@media (max-width: 390px) {
+@media (max-width: 500px) {
     width: 100%;
     margin-left: 0;
   }
