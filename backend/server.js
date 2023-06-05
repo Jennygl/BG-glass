@@ -92,7 +92,7 @@ app.get('/glassar', async (req, res) => {
         INNER JOIN
         recensioner
         ON recensioner.glass_id = glassar.id
-        ORDER BY recensioner.glass_id DESC;`)
+        ORDER BY recensioner.id DESC;`)
         res.json(glassarna.rows)
     } catch (err) {
         console.log(err.message)
