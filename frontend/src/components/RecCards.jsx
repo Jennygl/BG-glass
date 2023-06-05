@@ -71,8 +71,8 @@ export default RecCards
 const RecensionerDiv = styled.div`
     width: 30rem;
     background-color: #78CDC0;
-    border: solid .2rem #FFFFFF;
-    border-radius: .4rem;
+    border: solid 3px #FFFFFF;
+    border-radius: 5px;
     margin: 1rem;
     padding: 1rem 1rem;
 `;

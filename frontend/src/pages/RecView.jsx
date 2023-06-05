@@ -54,6 +54,7 @@ export default Glassar
 
 const Body = styled.body`
     overflow-x: hidden;
+    background-color: #EA97A9;
 `;
 
 const StyledDiv = styled.div`
