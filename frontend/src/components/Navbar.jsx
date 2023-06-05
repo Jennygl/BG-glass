@@ -21,12 +21,13 @@ export default Navbar
 
 // NAV
 const Nav = styled.nav`
-position: static;
+position: absolute;
+z-index: 3;
 top:0px;
-height: 9.25rem;
-background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 3.58%, rgba(0, 0, 0, 0) 64.62%);
+height: 5.5rem;
+width: 100vw;
+background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 8.58%, rgba(0, 0, 0, 0) 59.62%);
 display: flex;
-align-items: center;
 @media screen and (max-width: 600px) {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 3.58%, rgba(0, 0, 0, 0) 120.62%);
 }
@@ -37,12 +38,14 @@ const Ul = styled.ul`
 display: flex;
 justify-content: start;
 align-items: center;
+padding-left: .4rem;
 `
 
 // NAV ICON
 const Icon = styled.li`
-font-size: 4.6rem;
+font-size: 3.5rem;
 list-style: none;
+margin: .4rem .3rem 0 0;
 @media screen and (max-width: 600px) {
  font-size: 3rem;
 }
@@ -50,11 +53,10 @@ list-style: none;
 
 //NAV TEXT
 const Text = styled.li`
-@import url('https://fonts.googleapis.com/css2?family=Oregano&display=swap');
-font-family: 'Oregano', cursive;
+font-family: 'Oregano';
 list-style: none;
 font-weight: 400;
-font-size: 4.6rem;
+font-size: 3rem;
 color: #E690A3;
 @media screen and (max-width: 600px) {
    font-size: 3rem;
