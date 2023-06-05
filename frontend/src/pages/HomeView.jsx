@@ -18,8 +18,8 @@ function HomeView() {
       </Link>
     </StyledDiv>
     <HeroImg hero={hero}></HeroImg>
-    <ReviewButton></ReviewButton>
     <ToppGlassar></ToppGlassar>
+    <ReviewButton></ReviewButton>
     <BackToTop></BackToTop>
   </Body>
   )
