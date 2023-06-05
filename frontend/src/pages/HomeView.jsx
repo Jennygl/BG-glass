@@ -10,8 +10,8 @@ function HomeView() {
 
 <>
         <HeroImg hero={hero}></HeroImg>
-        <ReviewButton></ReviewButton>
         <ToppGlassar></ToppGlassar>
+        <ReviewButton></ReviewButton>
     <BackToTop></BackToTop>
 </>
   )
