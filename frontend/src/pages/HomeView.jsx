@@ -13,10 +13,12 @@ function HomeView() {
   <Body>
     <StyledDiv>
       <StyledH1>BG Glace</StyledH1>
-      <StyledP>Vi öppnar dörrarna till vårt glassälskar-community! Här kan ni njuta av en smakfull resa genom en oändlig värld av glass. Låt era smaklökar utforska en palett av sensationer och låt er inspiration flöda genom era recensioner. Varje åsikt har betydelse när vi gemensamt hyllar och utforskar de bästa glassarna.</StyledP>
-      <Link to="/glassar">
-        <StyledButton>Skriv en recension</StyledButton>
-      </Link>
+      <BackgroundP>
+        <StyledP>Vi öppnar dörrarna till vårt glassälskar-community! Här kan ni njuta av en smakfull resa genom en oändlig värld av glass. Låt era smaklökar utforska en palett av sensationer och låt er inspiration flöda genom era recensioner. Varje åsikt har betydelse när vi gemensamt hyllar och utforskar de bästa glassarna.</StyledP>
+        <Link to="/glassar">
+          <StyledButton>Skriv en recension</StyledButton>
+        </Link>
+      </BackgroundP>
     </StyledDiv>
     <HeroImg hero={hero}></HeroImg>
     <ToppGlassar></ToppGlassar>
@@ -46,7 +48,7 @@ const StyledDiv = styled.div`
   align-items: center;
   @media screen and (max-width: 500px) {
     width: 100vw;
-    height: 132vh;
+    height: 130vh;
     justify-content: end;
     left: 0;
     padding: 5vw;
@@ -72,15 +74,10 @@ const StyledH1 = styled.h1`
 const StyledP = styled.p`
   font-family: 'Neucha';
   color: #222222;
-  font-size: 1rem;
+  font-size: 1.5rem;
   @media screen and (max-width: 500px) {
-    width: 85vw;
+    font-size: 1rem;
     text-align: center;
-    background-color: #fef8b4;
-    padding: 2rem 2rem;
-    border-top: solid 1rem #e495ca;
-    border-bottom: solid 1rem #e495ca;
-    margin-top: 16rem;
   }
 `;
 
@@ -98,6 +95,18 @@ const StyledButton = styled.button`
     background-color: #F9B6D2;
   }
   @media screen and (max-width: 500px) {
-    margin: 0 5rem;
+    margin: .2rem 3rem;
+  }
+`;
+
+const BackgroundP = styled.div`
+  margin: 0;
+  padding: 0;
+  @media screen and (max-width: 500px) {
+    background-color: #fef8b4;
+    padding: 2rem 2rem;
+    border-top: solid 1rem #e495ca;
+    border-bottom: solid 1rem #e495ca;
+    margin-top: 16rem;
   }
 `;

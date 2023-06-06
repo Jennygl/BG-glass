@@ -26,7 +26,7 @@ const RecCards = ({recensioner}) => {
 
   return (
     <>
-        <div>
+        <StyledDiv>
             {recensioner.map((recension, index)=>(
             <RecensionWrapper key={index}>
             <GlassBild> {
@@ -53,8 +53,8 @@ const RecCards = ({recensioner}) => {
                     <AccordionButton onClick={() => toggleAccordion(index)}>
                     {openIndex === index ? <ion-icon name="chevron-up-outline"></ion-icon> : <ion-icon name="chevron-down-outline"></ion-icon>}
                     </AccordionButton>
+                    <StyledP>Recension av {recension.recensent}</StyledP>
                 </GlassBetygDiv>
-                <StyledP>Recension av {recension.recensent}</StyledP>
                 {openIndex === index && (
                     <div>
                         <Recension> "{recension.rec}" </Recension>
@@ -66,12 +66,16 @@ const RecCards = ({recensioner}) => {
             </RecensionerDiv>
             </RecensionWrapper>
             ))}
-        </div>
+        </StyledDiv>
     </>
   )
 }
 
 export default RecCards
+
+const StyledDiv = styled.div`
+    margin-bottom: 10vh;
+`;
 
 
 const RecensionerDiv = styled.div`
@@ -79,14 +83,23 @@ const RecensionerDiv = styled.div`
     background-color: #78CDC0;
     border: solid 3px #FFFFFF;
     border-radius: 5px;
-    margin: 1rem;
+    margin: 1rem 5rem 1rem 1rem;
     padding: 1rem 1rem;
+    @media screen and (max-width: 500px) {
+        width: 12rem;
+        margin: 0rem 2.5rem 2.5rem 0;
+        padding: 1.2rem 1.2rem .9rem 1.2rem;
+    }
 `;
 
 const GlassBetygDiv = styled.div`
     display: grid;
     grid-template-columns: 1fr auto 1fr auto 1fr;
     align-items: center;
+    @media screen and (max-width: 500px) {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    }
 `;
 
 const AccordionButton = styled.div`
@@ -97,6 +110,12 @@ const AccordionButton = styled.div`
     height: 3rem;
     cursor: url(${creamcursor}), auto;
     margin-bottom: .7rem;
+    @media screen and (max-width: 500px) {
+        grid-column: 1;
+        grid-row: 4;
+        margin: 0 0 0 9.5rem;
+        padding: 0;
+    }
 `;
 
 const GlassNamn = styled.h3`
@@ -112,16 +131,27 @@ const Betyg = styled.p`
     grid-column: 3/4;
     font-family: 'Neucha';
     margin: 0;
+    @media screen and (max-width: 500px) {
+        grid-column: 1;
+        grid-row: 2;
+    }
 `;
 
 const StyledImg = styled.img`
     width: 9rem;
+    @media screen and (max-width: 500px) {
+        margin: .9vh 0;
+    }
 `;
 
 const Recension = styled.p`
     font-family: 'Indie Flower';
     color: #FFF8B2;
     font-size: 1.5rem;
+     @media screen and (max-width: 500px) {
+        font-size: 1.3rem;
+        margin-top: 0;
+    }
 `;
 
 const Bild = styled.img`
@@ -135,10 +165,16 @@ const GlassBild = styled.div`
 const RecensionWrapper = styled.div`
     display: flex;
     justify-content: center;
+    margin-bottom: .7rem;
 `;
 
 const StyledP = styled.p`
     font-family: neucha;
     color: #FFFFFF;
     margin: 0;
+    @media screen and (max-width: 500px) {
+        grid-column: 1;
+        grid-row: 3;
+        margin-bottom: .2rem;
+    }
 `;

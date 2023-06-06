@@ -5,7 +5,6 @@ function HeroImg({hero}) {
   return (
     <StyledDiv>
       <StyledImg src={hero} alt="Hero image" />
-      <Box></Box>
     </StyledDiv>
   );
 }
@@ -15,6 +14,9 @@ export default HeroImg;
 const StyledDiv = styled.div`
     display: flex;
     justify-content: start;
+    @media screen and (max-width: 500px) {
+    margin-bottom: 19rem;
+    }
 `;
 
 const StyledImg = styled.img`
@@ -22,12 +24,5 @@ const StyledImg = styled.img`
   @media screen and (max-width: 500px) {
     width: auto;
     height: 95vh;
-  }
-`;
-
-const Box = styled.div`
-  @media screen and (max-width: 500px) {
-    width: 100vw;
-    height: 135vh;
   }
 `;
