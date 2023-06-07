@@ -94,10 +94,11 @@ const StyledH1 = styled.h1`
 const StyledP = styled.p`
   font-family: 'Neucha';
   color: #222222;
-  font-size: 1rem;
+  font-size: 1.5rem;
   @media screen and (max-width: 500px) {
     background-color: #fef8b4;
-    padding: 2rem 2rem;
+    font-size: 1rem;
+    padding: 3rem 2rem;
     position: absolute;
     top: 200vw;
     border-top: solid 1rem #e495ca;

@@ -135,6 +135,9 @@ font-size: 3.5rem;
 color: white;
 letter-spacing: 0.1em;
 text-align: center;
+@media screen and (max-width: 500px) {
+  margin-top: 0;
+}
 
 `
 
