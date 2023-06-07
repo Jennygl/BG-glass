@@ -1,5 +1,5 @@
 // import React from 'react'
-import styled from 'styled-components'
+import styled ,{ keyframes }from 'styled-components'
 import magnumImage from '../assets/magnum.png'
 // import strutenImage from '../assets/struten.png'
 // import struten2Image from '../assets/struten2.png'
@@ -9,6 +9,9 @@ import solero from '../assets/glass/solero.png'
 import daim from '../assets/glass/daim.png'
 import magnum from '../assets/glass/magnum_classic.png'
 import piggelin from '../assets/glass/piggelin.png'
+import Tiptop from '../assets/glass/tiptop.png'
+import Twister from '../assets/glass/twister.png'
+import Calippo from '../assets/glass/calippo.png'
 import { useEffect, useState } from "react";
 
 import axios from 'axios'
@@ -60,6 +63,13 @@ switch (glassNamn) {
             return piggelin;
      case 'Magnum Classic':
             return magnum;
+     case 'Tiptop':
+            return Tiptop;
+     case 'Calippo Cola':
+            return Calippo;
+     case 'Twister':
+            return Twister;
+
       default:
         return magnumImage
 }
@@ -71,12 +81,14 @@ switch (glassNamn) {
 
     <Wrapper>
 <HEADING> TOPPGLASSAR</HEADING>
+<ICON><ion-icon name="chevron-down-outline"></ion-icon></ICON>
     <FirstPair>
   {glassar.length > 0 && (
     <>
     <FirstImage src={glassBild(glassar[0].namn)} alt="ice cream picture" />
     <FirstText>
-      <P>  {rating(glassar[0].betyg)}</P>
+    <NAME>{glassar[0].namn}</NAME>
+      <RATING>  {rating(glassar[0].betyg)}</RATING>
       <Quote>&quot;{glassar[0].rec}&quot;</Quote>
       <NAME>-{glassar[0].recensent}</NAME>
     </FirstText>
@@ -86,7 +98,8 @@ switch (glassNamn) {
 
       <SecondPair>
         {glassar.length>0 &&(<><SecondText>
-                      <P> {rating(glassar[1].betyg)} </P>
+                <NAME>{glassar[1].namn}</NAME>
+                      <RATING> {rating(glassar[1].betyg)} </RATING>
                       <Quote>&quot;{glassar[1].rec}&quot;</Quote>
                       <NAME>-{glassar[1].recensent}</NAME>
                   </SecondText><SecondImage src={glassBild(glassar[1].namn)} alt="ice cream picture" /></>
@@ -99,8 +112,9 @@ switch (glassNamn) {
         {glassar.length >0 &&(
          <>
          <ThirdImage src={glassBild(glassar[2].namn)} alt="ice cream picture" /><ThirdText>
-                          <P>{rating(glassar[2].betyg)} </P>
-                          <Quote>&quot; {glassar[2].rec} &quot;</Quote>
+         <NAME>{glassar[2].namn}</NAME>
+                          <RATING>{rating(glassar[2].betyg)} </RATING>
+                          <Quote>&quot;{glassar[2].rec}&quot;</Quote>
                           <NAME>-{glassar[2].recensent}</NAME></ThirdText>
                           </>)}
 
@@ -125,14 +139,14 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 200vh;
+  height: 250vh;
   width: 100%;
   position: relative;
   top: 0;
   left: 0;
 
   @media screen and (max-width: 500px) {
-    height:100vh;
+    height:95vh;
 
 }
 `
@@ -150,9 +164,9 @@ margin-right: 60%;
 const FirstText = styled.div`
 background-color: #61aca0;
 border-radius: 50%;
-padding: 4vw;
+padding: 5vw;
 display: inline-flex;
-flex-wrap: wrap;
+flex-direction: column;
 align-items: center;
 justify-content: center;
 width: 15vw;
@@ -162,6 +176,7 @@ color: #FFF8B2;
 @media screen and (max-width: 500px) {
 padding:17vw;
 align-content: center;
+/* margin:1em auto; */
 
 }
 `
@@ -183,7 +198,7 @@ border-radius: 50%;
 padding: 4vw;
 display: inline-flex;
 align-items: center;
-flex-wrap:wrap;
+flex-direction: column;
 justify-content: center;
 width: 15vw;
 height: 15vw;
@@ -191,7 +206,8 @@ border: solid #FFF8B2;
 color: #FFF8B2;
 @media screen and (max-width: 500px) {
     padding:17vw;
-align-content: center;
+    align-content: center;
+
 }
 `
 //Hämtar styling från FirstPair som props.
@@ -221,7 +237,6 @@ const FirstImage = styled.img`
   max-width: 20vw;
   height: auto;
   @media screen and (max-width: 500px) {
-
 max-width:45vw;
 
 }
@@ -241,23 +256,22 @@ const ThirdImage = styled.img`
   height: auto;
   @media screen and (max-width: 500px) {
     max-width:45vw;
-
-
 }
 `
 
 const HEADING = styled.h1`
+cursor: default;
 font-style: normal;
-font-size: 5rem;
+font-size: 6rem;
 text-align: center;
 letter-spacing: 0.525em;
 color: #FFFFFF;
-border: 1px solid;
+/* text-shadow: 0 0 10px rgba(255, 248, 178, 0.5); */
 font-family: 'Inconsolata';
 
   @media screen and (max-width: 500px) {
-   width:80%;
-   font-size: 1.5rem;
+   width:100%;
+   font-size: 2rem;
    text-align: center;
    justify-content: center;
    align-items: center;
@@ -265,33 +279,22 @@ font-family: 'Inconsolata';
 
 }
 `
-const P = styled.div`
-line-height: 3.5rem;
-letter-spacing: 0.015em;
+const RATING = styled.div`
 font-size: 1.8rem;
 display: flex;
-font-family: 'Inconsolata';
-font-style: normal;
-font-weight: 400;
 font-size: 2rem;
 line-height: 4rem;
-letter-spacing: 0.015em;
-color: #FFF8B2;
 @media screen and (max-width: 500px) {
    font-size: 1rem;
    line-height: 1.5;
-
-
 }
 `
-const Quote = styled(P)`
+const Quote = styled.div`
 font-family: 'Indie Flower';
 font-size: 2.2rem;
+width:max-content;
 @media screen and (max-width: 500px) {
-   font-size: 1rem;
-   line-height: 10px;
-
-  line-height: 0.9rem;
+    font-size: 1rem;
 
 }
 `
@@ -302,12 +305,25 @@ font-weight: 400;
 font-size: 1.8rem;
 @media screen and (max-width: 500px) {
    font-size: 1rem;
-   line-height: 10px;
+   width:10rem;
+   text-align: center;
 
-  width:fit-content;
+}
+`
+const bounceAnimation = keyframes`
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+`;
+
+const ICON = styled.div`
+font-size: 4rem;
+color:white;
+text-shadow: 0 0 10px rgba(255, 248, 178, 1);
+animation: ${bounceAnimation} 5s infinite;
+@media screen and (max-width: 500px) {
+   font-size: 2rem;
 
 
 }
-
-
 `
