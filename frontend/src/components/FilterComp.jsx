@@ -94,6 +94,7 @@ function FilterComp({glassarna}) {
 
     return (
       <>
+      <FilterDiv>
 <FilterHeader>Filtrera</FilterHeader>
 
 <Form>
@@ -156,6 +157,7 @@ function FilterComp({glassarna}) {
 
 
 </Form>
+</FilterDiv>
 <RecCards recensioner={filtreradeGlassar}></RecCards>
 
     </>
@@ -163,6 +165,14 @@ function FilterComp({glassarna}) {
 }
 
 export default FilterComp;
+const FilterDiv = styled.div`
+display:flex;
+/* justify-content:center; */
+flex-direction:column;
+align-items: center;
+width: 100%;
+`
+
 
 const FilterHeader = styled.h2`
 font-size: 2em;
@@ -178,18 +188,17 @@ align-items: center;
 background-color: #78CDC0;
 border: 3px solid white;
 border-radius: 5px;
-width: 80vw;
+width: 70%;
 height: 100px;
-margin: 1vh auto 10vh auto;
+margin: 1vh 0 10vh 0;
 @media (max-width: 1000px) {
     flex-direction: column;
     height: auto;
-    width: auto;
-    max-width:50vw;
+    /* width: auto; */
     padding: 1vh;
   }
 @media (max-width: 550px) {
-    max-width:80vw;
+    width:80%;
   }
 `
 
@@ -207,7 +216,7 @@ border-radius: 5px;
   &::after {
     content: '\\25BD';
     position: absolute;
-    /* top: 10px; */
+    top: 10px;
     right: 0;
     bottom: 0;
     font-size: 35px;
@@ -306,11 +315,15 @@ const Reset = styled.button`
 background-color: #31898a;
 border: 2px solid white;
 border-radius: 5px;
-height: 5vh;
+height: 7vh;
 font-size: 1.5vw;
 font-family: 'Neucha';
+color:white;
 margin: 2vw;
 cursor: url(${creamcursor}), auto;
+&:hover {
+    background-color: #194748;
+}
 @media (max-width: 1000px) {
 font-size: 1.5em;
   }
